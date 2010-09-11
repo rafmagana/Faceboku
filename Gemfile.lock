@@ -1,0 +1,31 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    addressable (2.2.1)
+    faraday (0.4.6)
+      addressable (>= 2.1.1)
+      rack (>= 1.0.1)
+    multi_json (0.0.4)
+    nokogiri (1.4.3.1)
+    oa-core (0.0.5)
+      rack (~> 1.1)
+    oa-oauth (0.0.5)
+      multi_json (~> 0.0.2)
+      nokogiri (~> 1.4.2)
+      oa-core (= 0.0.5)
+      oauth (~> 0.4.0)
+      oauth2 (~> 0.0.10)
+    oauth (0.4.3)
+    oauth2 (0.0.13)
+      faraday (~> 0.4.1)
+      multi_json (>= 0.0.4)
+    rack (1.2.1)
+    sinatra (1.0)
+      rack (>= 1.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  oa-oauth (= 0.0.5)
+  sinatra (= 1.0)
