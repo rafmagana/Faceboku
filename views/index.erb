@@ -1,16 +1,18 @@
-<p><span id='login'><fb:login-button autologoutlink="true" /></span></p>
-
+<h2>Welcome to my list of interesting articles</h2>
+<fb:name></fb:name>, we recommend you the following articles.
 <table>
+	<% @articles.each do |article| %>
 	<tr>
-		<td>Heroku is the instant ruby platform</td><td><fb:like href="http://www.heroku.com" layout="button_count" show_faces="false" /></td>
+		<td class='article'><%=article[:title]%></td><td><fb:like href="<%=article[:link]%>" layout="button_count" show_faces="false" /></td>
 	</tr>
-	<tr>
-		<td>Ruby in twenty minutes</td><td><fb:like href="http://www.ruby-lang.org/en/documentation/quickstart/" layout="button_count" show_faces="false" /></td>
-	</tr>
+	<% end %>
 	<tr>
 		<td colspan='2'>...</td>
 	</tr>
 </table>
+
 <hr />
 <br />
-<p>Do you like this site? <fb:like /></p>
+
+<p>Do you like this application?</p>
+<p><fb:like /></p>

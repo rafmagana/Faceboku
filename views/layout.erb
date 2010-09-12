@@ -2,6 +2,9 @@
 <html xmlns:fb="http://www.facebook.com/2008/fbml">
 	<head>
 		<title>Faceboku</title>
+		<style>
+			.article{ font-size: 10; color: red;}
+		</style>
 	</head>
 	<body>
 		<%= yield %>
@@ -13,25 +16,7 @@
 					appId: '153304591365687',
 					status: true,
 					cookie: true,
-			        xfbml: false
-				});
-				
-				FB.Event.subscribe('auth.login', function(response) {
-		        	window.location.reload();
-		      	});
-
-				FB.Event.subscribe('auth.logout', function(response) {
-		        	window.location.reload();
-		      	});
-				
-				FB.getLoginStatus(function(response) {
-				  if (response.session) {
-				    // logged in and connected user, someone you know
-					FB.XFBML.parse();
-				  } else {
-				    // no user session available, someone you dont know
-					FB.XFBML.parse(document.getElementById('login'));
-				  }
+			        xfbml: true
 				});
 			};
 
