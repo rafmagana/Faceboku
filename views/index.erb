@@ -1,18 +1,15 @@
-<h2>Welcome to my list of interesting articles</h2>
-<fb:name></fb:name>, we recommend you the following articles.
+<fb:login-button autologoutlink="true"></fb:login-button>
+<h3>Welcome to my list of interesting articles</h3>
+
 <table>
 	<% @articles.each do |article| %>
 	<tr>
-		<td class='article'><%=article[:title]%></td><td><fb:like href="<%=article[:link]%>" layout="button_count" show_faces="false" /></td>
+		<td class='article'>- <a href='javascript:void(0);'><%=article[:title]%></a></td>
+		<td><fb:like href="<%=article[:link]%>" layout="button_count" show_faces="false" /></td>
 	</tr>
 	<% end %>
-	<tr>
-		<td colspan='2'>...</td>
-	</tr>
 </table>
 
 <hr />
-<br />
-
-<p>Do you like this application?</p>
+<p><span class='like_app'>Do you like this application?</span></p>
 <p><fb:like /></p>

@@ -3,7 +3,10 @@
 	<head>
 		<title>Faceboku</title>
 		<style>
-			.article{ font-size: 10; color: red;}
+			body { font-family: Arial; font-size: 20px ;}
+			a { text-decoration: none; color: #333; }
+			.article { font-size: 1.2em; }
+			.like_app { font-size: 0.8em }
 		</style>
 	</head>
 	<body>
@@ -13,7 +16,7 @@
 			window.fbAsyncInit = function() {
 
 				FB.init({
-					appId: '153304591365687',
+					appId: '<%=APP_ID%>',
 					status: true,
 					cookie: true,
 			        xfbml: true
