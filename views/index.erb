@@ -1,15 +1,28 @@
-<fb:login-button autologoutlink="true"></fb:login-button>
-<h3>Welcome to my list of interesting articles</h3>
+<%=session['fb_error']%>
+
+<% if session['fb_auth'] %>
+	<a href='logout'><img src='images/fb_logout_button.png'></a>
+<% else %>
+	<a href='auth/facebook'><img src='images/fb_login_button.png'></a>
+<% end %>
+
+<h3><%= 'Hello, ' + session['fb_auth']['user_info']['first_name'] + ', ' if session['fb_token'] %>Welcome to my list of interesting articles.</h3>
 
 <table>
 	<% @articles.each do |article| %>
 	<tr>
-		<td class='article'>- <a href='javascript:void(0);'><%=article[:title]%></a></td>
-		<td><fb:like href="<%=article[:link]%>" layout="button_count" show_faces="false" /></td>
+		<td class='article'>- <a href='<%=article[:url]%>' target='_blank'><%=article[:title]%></a></td>
+		<td>
+			<% if session['fb_auth'] %>
+				<iframe src="http://www.facebook.com/plugins/like.php?href=<%=article[:url]%>&amp;layout=button_count&amp;show_faces=true&amp;width=450&amp;action=like&amp;colorscheme=light&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:21px;" allowTransparency="true"></iframe>
+			<% end %>
+		</td>
 	</tr>
 	<% end %>
 </table>
 
-<hr />
-<p><span class='like_app'>Do you like this application?</span></p>
-<p><fb:like /></p>
+<% if session['fb_auth'] %>
+	<hr />
+	<p><span class='like_site'>Do you like this site?</span></p>
+	<p><iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Ffaceboku.heroku.com%2F&amp;layout=standard&amp;show_faces=true&amp;width=450&amp;action=like&amp;colorscheme=light&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:80px;" allowTransparency="true"></iframe></p>
+<% end %>

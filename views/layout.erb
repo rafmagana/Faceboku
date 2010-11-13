@@ -1,37 +1,23 @@
 <!DOCTYPE HTML>
-<html xmlns:fb="http://www.facebook.com/2008/fbml">
+<html>
 	<head>
+		<meta property="og:title" content="List of Articles"/>
+	    <meta property="og:type" content="website"/>
+	    <meta property="og:image" content="http://faceboku.heroku.com/images/heroku_logo.png"/>
+	    <meta property="og:url" content="http://faceboku.heroku.com/"/>
+	    <meta property="og:site_name" content="Heroku:Interesting Articles"/>
+	    <meta property="fb:admins" content="643897273"/>
+	    
 		<title>Faceboku</title>
 		<style>
 			body { font-family: Arial; font-size: 20px ;}
 			a { text-decoration: none; color: #333; }
+			.logout a { color: #2554C7; font-size: 15px; }
 			.article { font-size: 1.2em; }
-			.like_app { font-size: 0.8em }
+			.like_site { font-size: 0.8em }
 		</style>
 	</head>
 	<body>
 		<%= yield %>
-		<div id="fb-root"></div>
-		<script>
-			window.fbAsyncInit = function() {
-
-				FB.init({
-					appId: '<%=APP_ID%>',
-					status: true,
-					cookie: true,
-			        xfbml: true
-				});
-			};
-
-			(function() {
-			  var e = document.createElement('script');
-			  e.type = 'text/javascript';
-			  e.src = document.location.protocol +
-			    '//connect.facebook.net/en_US/all.js';
-			  e.async = true;
-			  document.getElementById('fb-root').appendChild(e);
-			}());
-		</script>
-		
 	</body>
 </html>
