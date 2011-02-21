@@ -3,8 +3,8 @@ require 'omniauth/oauth'
 
 enable :sessions
 
-APP_ID = "153304591365687"
-APP_SECRET = "7a7663099ccb62f180d985ba1252a3e2"
+APP_ID = ENV['FB_APPLICATION_ID'] 
+APP_SECRET = ENV['FB_APPLICATION_SECRET'] 
 
 use OmniAuth::Builder do  
   provider :facebook, APP_ID, APP_SECRET, { :scope => 'email, status_update, publish_stream' }
@@ -15,6 +15,7 @@ get '/' do
     @articles << {:title => 'Introduction to Heroku', :url => 'http://docs.heroku.com/heroku'}
     @articles << {:title => 'Deploying Rack-based apps in Heroku', :url => 'http://docs.heroku.com/rack'}
     @articles << {:title => 'Learn Ruby in twenty minutes', :url => 'http://www.ruby-lang.org/en/documentation/quickstart/'}
+	@articles << {:title => 'Cloud Apps Experts Blog', :url => 'http://blog.cloud-apps-experts.com'}
     
     erb :index
 end

@@ -1,0 +1,22 @@
+This is forked from a Sinatra app which shows how to do Facebook Login/Logout, as well as Like & Share buttons. 
+
+To use this application, you first need to go to Facebook and get application credentials. 
+
+http://www.facebook.com/developers/createapp.php
+
+You need your:
+    application ID: <APP_ID> 
+    application secret:   <APP_SECRET> 
+	
+You need to set up Ruby 1.9.2, and the heroku gem
+> gem install heroku
+	
+To deploy this application at heroku.com, you need to do the following:
+
+1. git clone https://
+2. cd jgodseFaceboku
+3. heroku create --stack bamboo-mri-1.9.2
+4. git push heroku master
+5. heroku config:add FB_APPLICATION_ID=<APP_ID> FB_APPLICATION_SECRET=<APP_SECRET>
+6. heroku restart
+7. heroku open
