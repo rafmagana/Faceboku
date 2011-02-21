@@ -29,3 +29,5 @@ To deploy this application at heroku.com, you need to do the following:
 
 * Note that this application does not work on the heroku stack bamboo-mri-1.9.2
 * Run "heroku stack" to ensure that it is bamboo-ree-1.8.7
+
+* Also note that I could not get this working as a FB canvas application.
