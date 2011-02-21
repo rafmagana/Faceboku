@@ -15,8 +15,7 @@ To deploy this application at heroku.com, you need to do the following:
 
 1. git clone https://
 2. cd jgodseFaceboku
-3. heroku create --stack bamboo-mri-1.9.2
+3. heroku create --stack bamboo-ree-1.8.7
 4. git push heroku master
 5. heroku config:add FB_APPLICATION_ID=<APP_ID> FB_APPLICATION_SECRET=<APP_SECRET>
-6. heroku restart
-7. heroku open
+6. heroku open
