@@ -12,22 +12,35 @@ Also, pick a "Application Name"  for your app in the Facebook config page.
  	
 You need to set up Ruby (I used 1.9.2) and the heroku gem
 > gem install heroku
+
+To run this on Windows, you must first set the environment variables to the values you got from Facebook (above). 
+
+C:\> set FB_APPLICATION_ID=<APP_ID>
+C:\> set FB_APPLICATION_SECRET=<APP_SECRET>
+
+To run this on Linux/bash you must first set the environment variables to the values you got from Facebook (above).
+$ export FB_APPLICATION_ID=<APP_ID>
+$ export FB_APPLICATION_SECRET=<APP_SECRET>
+
 	
 To deploy this application at heroku.com, you need to do the following:
 
 1. git clone https://jgodse@github.com/jgodse/jgodseFaceboku.git
 2. cd jgodseFaceboku
 3. heroku create --stack bamboo-ree-1.8.7
+   (save the URL give by Heroku for later)
+
 4. git push heroku master
 5. heroku config:add FB_APPLICATION_ID=<APP_ID> FB_APPLICATION_SECRET=<APP_SECRET>
 6. heroku open
 7. Go to the application configuration page at Facebook and make sure that the "Site URL" and 
 "Canvas URL" is the same as the URL for this app. If you need to rename this app, use a 
 "heroku rename" on the app before reconfiguring Facebook. 
-8. At this point, reload the URL of your Facebook App and you should be able to login, logout, and hit the "like" and "share buttons. 
+8. At this point, reload the URL of your Facebook App and you should be able to login, logout, and hit the "like" and "share" buttons. 
 
 
 * Note that this application does not work on the heroku stack bamboo-mri-1.9.2
 * Run "heroku stack" to ensure that it is bamboo-ree-1.8.7
 
-* Also note that I could not get this working as a FB canvas application.
+* Also note that I could not get this working as a FB canvas application either in my version or the 
+* original version from which I forked. 
