@@ -1,6 +1,9 @@
 require 'sinatra'
 require 'omniauth/oauth'
 
+# workaround for ruby 1.9.2 with sinatra 1.0. See: http://stackoverflow.com/questions/3973402/sinatra-app-doesnt-start-on-run
+enable :run
+
 enable :sessions
 
 APP_ID = "153304591365687"
