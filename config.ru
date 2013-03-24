@@ -1,3 +1,3 @@
-require 'faceboku'
+require './faceboku'
 
 run Sinatra::Application
