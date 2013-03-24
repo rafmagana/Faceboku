@@ -1,6 +1,8 @@
 require 'sinatra'
 require 'omniauth/oauth'
 
+require './helpers/get_post'
+
 enable :sessions
 
 APP_ID = "153304591365687"
@@ -10,13 +12,13 @@ use OmniAuth::Builder do
   provider :facebook, APP_ID, APP_SECRET, { :scope => 'email, status_update, publish_stream' }
 end
 
-get '/' do
-    @articles = []
-    @articles << {:title => 'Introduction to Heroku', :url => 'http://docs.heroku.com/heroku'}
-    @articles << {:title => 'Deploying Rack-based apps in Heroku', :url => 'http://docs.heroku.com/rack'}
-    @articles << {:title => 'Learn Ruby in twenty minutes', :url => 'http://www.ruby-lang.org/en/documentation/quickstart/'}
-    
-    erb :index
+get_post '/' do
+  @articles = []
+  @articles << {:title => 'Getting Started with Heroku', :url => 'https://devcenter.heroku.com/articles/quickstart'}
+  @articles << {:title => 'Deploying Rack-based apps in Heroku', :url => 'http://docs.heroku.com/rack'}
+  @articles << {:title => 'Learn Ruby in twenty minutes', :url => 'http://www.ruby-lang.org/en/documentation/quickstart/'}
+
+  erb :index
 end
 
 get '/auth/facebook/callback' do
