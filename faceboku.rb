@@ -1,10 +1,11 @@
 require 'sinatra'
-require 'omniauth/oauth'
+require 'omniauth-facebook'
 
 require './helpers/get_post'
 
 enable :sessions
 
+# This might come from DB
 APP_ID = "153304591365687"
 APP_SECRET = "7a7663099ccb62f180d985ba1252a3e2"
 
