@@ -1,7 +1,9 @@
 source "http://rubygems.org/"
 
-gem 'sinatra', '1.0'
-gem 'omniauth-facebook'
+gem 'sinatra'
+gem 'sinatra-contrib'
+gem 'omniauth-facebook', '1.4.0'
+gem 'fb_graph'
 
 group :development do
   gem 'pry'

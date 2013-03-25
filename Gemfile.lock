@@ -1,11 +1,24 @@
 GEM
   remote: http://rubygems.org/
   specs:
+    activesupport (3.2.12)
+      i18n (~> 0.6)
+      multi_json (~> 1.0)
+    attr_required (0.0.5)
+    backports (3.1.1)
     coderay (1.0.9)
+    eventmachine (1.0.3)
     faraday (0.8.7)
       multipart-post (~> 1.1)
+    fb_graph (2.6.6)
+      httpclient (>= 2.2.0.2)
+      multi_json (>= 1.3)
+      rack-oauth2 (>= 0.14.4)
+      tzinfo
     hashie (1.2.0)
     httpauth (0.2.0)
+    httpclient (2.3.3)
+    i18n (0.6.4)
     jwt (0.1.8)
       multi_json (>= 1.5)
     method_source (0.8.1)
@@ -20,24 +33,48 @@ GEM
     omniauth (1.1.3)
       hashie (~> 1.2)
       rack
-    omniauth-facebook (1.4.1)
-      omniauth-oauth2 (~> 1.1.0)
-    omniauth-oauth2 (1.1.1)
+    omniauth-facebook (1.4.0)
+      omniauth-oauth2 (~> 1.0.2)
+    omniauth-oauth2 (1.0.3)
       oauth2 (~> 0.8.0)
       omniauth (~> 1.0)
     pry (0.9.12)
       coderay (~> 1.0.5)
       method_source (~> 0.8)
       slop (~> 3.4)
-    rack (1.2.1)
-    sinatra (1.0)
+    rack (1.5.2)
+    rack-oauth2 (1.0.3)
+      activesupport (>= 2.3)
+      attr_required (>= 0.0.5)
+      httpclient (>= 2.2.0.2)
+      i18n
+      multi_json (>= 1.3.6)
+      rack (>= 1.1)
+    rack-protection (1.5.0)
+      rack
+    rack-test (0.6.2)
       rack (>= 1.0)
+    sinatra (1.3.6)
+      rack (~> 1.4)
+      rack-protection (~> 1.3)
+      tilt (~> 1.3, >= 1.3.3)
+    sinatra-contrib (1.3.2)
+      backports (>= 2.0)
+      eventmachine
+      rack-protection
+      rack-test
+      sinatra (~> 1.3.0)
+      tilt (~> 1.3)
     slop (3.4.4)
+    tilt (1.3.6)
+    tzinfo (0.3.37)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  omniauth-facebook
+  fb_graph
+  omniauth-facebook (= 1.4.0)
   pry
-  sinatra (= 1.0)
+  sinatra
+  sinatra-contrib
