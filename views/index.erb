@@ -6,7 +6,7 @@
 	<a href='auth/facebook'><img src='images/fb_login_button.png'></a>
 <% end %>
 
-<h3><%= 'Hello, ' + session['fb_auth']['user_info']['first_name'] + ', ' if session['fb_token'] %>Welcome to my list of interesting articles.</h3>
+<h3><%= 'Hello, ' + session['fb_auth']['info']['first_name'] + ', ' if session['fb_token'] %>Welcome to my list of interesting articles.</h3>
 
 <table>
 	<% @articles.each do |article| %>
