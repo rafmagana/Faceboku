@@ -2,7 +2,6 @@ require 'sinatra'
 require "sinatra/cookies"
 require 'omniauth-facebook'
 require 'fb_graph'
-require 'pry'
 require './helpers/get_post'
 
 enable :sessions
