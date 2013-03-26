@@ -59,10 +59,12 @@ end
 
 get '/login' do
   if settings.redirect_uri
+    # we're in FB
     erb :dialog_oauth
-   else
-     redirect '/auth/facebook'
-   end
+  else
+    # we aren't in FB (standalone app)
+    redirect '/auth/facebook'
+  end
 end
 
 get '/logout' do
@@ -78,7 +80,9 @@ post '/canvas/' do
   # User didn't grant us permission in the oauth dialog
   redirect '/auth/failure' if request.params['error'] == 'access_denied'
 
+  # see /login
   settings.redirect_uri = 'https://apps.facebook.com/faceboku/'
+
   # Canvas apps send the 'code' parameter
   # We use it to know if we're accessing the app from FB's iFrame
   # If so, we try to autologin
