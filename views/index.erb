@@ -1,9 +1,9 @@
-<%=session['fb_error']%>
+<%=session['fb_error']%><br />
 
 <% if session['fb_auth'] %>
 	<a href='logout'><img src='images/fb_logout_button.png'></a>
 <% else %>
-	<a href='auth/facebook'><img src='images/fb_login_button.png'></a>
+	<a href='login'><img src='images/fb_login_button.png'></a>
 <% end %>
 
 <h3><%= 'Hello, ' + session['fb_auth']['info']['first_name'] + ', ' if session['fb_token'] %>Welcome to my list of interesting articles.</h3>
